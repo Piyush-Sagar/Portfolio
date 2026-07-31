@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useLayoutEffect, useState, ReactNode } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -36,8 +36,8 @@ function applyTheme(newTheme: Theme) {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  // Apply theme on mount and when theme changes
-  useEffect(() => {
+  // Apply theme before paint to avoid flash
+  useLayoutEffect(() => {
     applyTheme(theme);
   }, [theme]);
 
