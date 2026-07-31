@@ -22,7 +22,7 @@ const themeIcons: Record<typeof themes[number], React.ReactNode> = {
   ),
   system: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 002 2z" />
     </svg>
   ),
 };
@@ -39,9 +39,10 @@ export default function ThemeToggle() {
       className="relative p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      suppressHydrationWarning
       aria-label={`Switch theme (current: ${themeLabels[theme]})`}
     >
-      <span className="sr-only">{themeLabels[theme]}</span>
+      <span className="sr-only" suppressHydrationWarning>{themeLabels[theme]}</span>
       <motion.div
         key={theme}
         initial={{ scale: 0.8, opacity: 0, rotate: -90 }}
@@ -55,6 +56,7 @@ export default function ThemeToggle() {
         className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-medium text-neutral-500 dark:text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}
+        suppressHydrationWarning
       >
         {themeLabels[theme]}
       </motion.div>
