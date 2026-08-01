@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const easing = [0.25, 0.46, 0.45, 0.94] as const;
@@ -27,31 +26,16 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto max-w-3xl px-6 py-16 md:py-24 border-t border-neutral-200 dark:border-neutral-800"
+      className="mx-auto max-w-7xl px-6 py-16 md:py-24 border-t border-neutral-200 dark:border-neutral-800"
     >
       <motion.div
-        className="flex flex-col md:flex-row gap-10 items-start"
+        className="flex-1 pt-2 md:pt-0"
         variants={cardVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >
-        <motion.div
-          className="relative shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-neutral-200 dark:bg-neutral-700"
-          variants={cardVariants}
-          whileHover={{ scale: 1.02, rotate: 1 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <Image
-            src="/piyush.jpg"
-            alt="Piyush Sagar"
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            priority
-          />
-        </motion.div>
-        <motion.div className="flex-1 pt-2 md:pt-0" variants={cardVariants}>
-          {/* Education & Skills tagline */}
+        {/* Education & Skills tagline */}
           <motion.p
             className="mt-4 text-sm text-neutral-500 dark:text-neutral-400"
             variants={cardVariants}
@@ -140,7 +124,6 @@ export default function About() {
               <p className="mt-1 text-neutral-600 dark:text-neutral-400">Open to internships & full-time</p>
             </motion.div>
           </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );
