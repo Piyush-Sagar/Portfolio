@@ -161,12 +161,12 @@ export default function Hero() {
             href="/Piyush Sagar Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 text-sm font-medium rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors group relative overflow-hidden"
+            className="px-5 py-2.5 text-sm font-medium rounded border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group relative overflow-hidden"
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             variants={itemVariants}
           >
-            <span className="relative z-10">View Resume</span>
+            <span className="relative z-10">Resume</span>
             <svg
               className="ml-2 inline-block w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"
@@ -182,7 +182,7 @@ export default function Hero() {
               />
             </svg>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
               aria-hidden="true"
             />
           </motion.a>
