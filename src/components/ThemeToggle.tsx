@@ -64,7 +64,7 @@ function ThemeToggleInner() {
 
 function ThemeToggleSkeleton() {
   return (
-    <div className="relative p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 w-10 h-10 flex" aria-hidden="true" />
+    <div className="relative p-2 rounded-lg bg-neutral-200 dark:bg-neutral-800 w-10 h-10 flex" aria-hidden="true" suppressHydrationWarning />
   );
 }
 
@@ -72,5 +72,9 @@ export default function ThemeToggle() {
   // Use lazy initialization to avoid hydration mismatch
   // Server renders skeleton, client renders actual component
   // The ThemeProvider applies theme classes before hydration completes
-  return typeof window === "undefined" ? <ThemeToggleSkeleton /> : <ThemeToggleInner />;
+  return (
+    <div suppressHydrationWarning>
+      {typeof window === "undefined" ? <ThemeToggleSkeleton /> : <ThemeToggleInner />}
+    </div>
+  );
 }
