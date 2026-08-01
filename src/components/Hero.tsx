@@ -158,13 +158,15 @@ export default function Hero() {
             />
           </motion.a>
           <motion.a
-            href="/portfolio"
+            href="/Piyush Sagar Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 text-sm font-medium rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors group relative overflow-hidden"
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             variants={itemVariants}
           >
-            <span className="relative z-10">View Portfolio</span>
+            <span className="relative z-10">View Resume</span>
             <svg
               className="ml-2 inline-block w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"
@@ -176,7 +178,7 @@ export default function Hero() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
               />
             </svg>
             <motion.div
