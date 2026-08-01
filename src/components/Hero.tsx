@@ -157,6 +157,33 @@ export default function Hero() {
               aria-hidden="true"
             />
           </motion.a>
+          <motion.a
+            href="/portfolio"
+            className="px-5 py-2.5 text-sm font-medium rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors group relative overflow-hidden"
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.98 }}
+            variants={itemVariants}
+          >
+            <span className="relative z-10">View Portfolio</span>
+            <svg
+              className="ml-2 inline-block w-4 h-4 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              aria-hidden="true"
+            />
+          </motion.a>
         </motion.div>
       </motion.div>
 
