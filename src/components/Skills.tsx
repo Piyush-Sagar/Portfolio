@@ -26,7 +26,7 @@ const skills = [
       { name: "Tailwind CSS", level: 90, years: "2+" },
       { name: "HTML/CSS", level: 95, years: "3+" },
     ],
-    color: "from-cyan-500 to-cyan-600",
+    color: "from-blue-500 to-blue-600",
     icon: "globe",
   },
   {
@@ -38,7 +38,7 @@ const skills = [
       { name: "Git & GitHub", level: 90, years: "3+" },
       { name: "Cloudinary", level: 70, years: "1+" },
     ],
-    color: "from-emerald-500 to-emerald-600",
+    color: "from-blue-500 to-blue-600",
     icon: "server",
   },
   {
@@ -48,7 +48,7 @@ const skills = [
       { name: "Algorithms", level: 85, years: "2+" },
       { name: "LeetCode", level: 80, years: "2+" },
     ],
-    color: "from-orange-500 to-orange-600",
+    color: "from-blue-500 to-blue-600",
     icon: "trophy",
   },
 ];

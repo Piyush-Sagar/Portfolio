@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const easing = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -58,6 +58,7 @@ export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -72,6 +73,13 @@ export default function Hero() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const rotateX = useTransform(mouseY, [-50, 50], [8, -8]);
   const rotateY = useTransform(mouseX, [-50, 50], [-8, 8]);
@@ -109,7 +117,7 @@ export default function Hero() {
             <span className="relative">
               Piyush Sagar
               <motion.span
-                className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-cyan-500 scale-x-0 origin-left"
+                className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-blue-600 scale-x-0 origin-left"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 1, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -226,7 +234,7 @@ export default function Hero() {
         {[1, 2, 3].map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-blue-500/5 dark:bg-cyan-500/5 blur-3xl"
+            className="absolute rounded-full bg-blue-500/5 dark:bg-blue-500/5 blur-3xl"
             style={{
               width: `${200 + i * 100}px`,
               height: `${200 + i * 100}px`,
@@ -248,10 +256,11 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-400 dark:text-neutral-600"
+        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-neutral-400 dark:text-neutral-600"
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.1, duration: 0.6, ease: easing }}
+        animate={{ opacity: scrolled ? 0 : 1, y: scrolled ? 20 : 0 }}
+        transition={{ duration: 0.4, ease: easing, delay: scrolled ? 0 : 1.1 }}
+        style={{ pointerEvents: scrolled ? "none" : "auto" }}
       >
         <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>
         <motion.svg

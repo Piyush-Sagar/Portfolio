@@ -106,7 +106,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
     >
       {/* Subtle top accent bar */}
       <motion.div
-        className="absolute top-0 left-0 h-0.5 w-full bg-neutral-400 dark:bg-neutral-600 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
+        className="absolute top-0 left-0 h-0.5 w-full bg-blue-500 dark:bg-blue-400 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: "-20px" }}

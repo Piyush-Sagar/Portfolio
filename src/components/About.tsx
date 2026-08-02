@@ -90,13 +90,13 @@ export default function About() {
               style={{ transitionDelay: "300ms" }}
             >
               {/* CGPA Highlight */}
-              <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-blue-500/10 via-transparent to-blue-500/10 pointer-events-none" />
               <p className="font-medium text-neutral-900 dark:text-neutral-100 relative z-10">Education</p>
               <p className="mt-1 text-neutral-600 dark:text-neutral-400 relative z-10">
                 B.Tech IT, VIT Vellore (2024–2028)
               </p>
               <div className="mt-3 relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow-lg shadow-amber-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold shadow-lg shadow-blue-500/30">
                   CGPA: 9.43
                 </span>
               </div>
