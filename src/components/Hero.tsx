@@ -99,7 +99,7 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Image
-            src="/piyush.jpg"
+            src="/piyush.png"
             alt="Piyush Sagar"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
