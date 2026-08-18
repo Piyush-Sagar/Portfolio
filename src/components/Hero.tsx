@@ -189,7 +189,7 @@ export default function Hero() {
               />
             </motion.a>
             <motion.a
-              href="/Piyush Sagar Resume.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 text-sm font-medium rounded border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group relative overflow-hidden"
