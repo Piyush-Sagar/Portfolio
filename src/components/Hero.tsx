@@ -125,16 +125,16 @@ export default function Hero() {
             </span>
           </motion.h2>
           <motion.p
-            className="text-xl md:text-2xl font-light text-neutral-600 dark:text-neutral-400"
+            className="text-xl md:text-2xl font-light text-neutral-600 dark:text-neutral-400 mt-4"
             variants={itemVariants}
           >
-            B.Tech Information Technology &middot; VIT Vellore
+            B.Tech in Information Technology &middot; VIT Vellore
           </motion.p>
           <motion.p
             className="text-lg md:text-xl text-neutral-500 dark:text-neutral-500 max-w-2xl leading-relaxed"
             variants={itemVariants}
           >
-            Competitive Programming &middot; Python &middot; Japanese &middot; Photo/Video Editing &middot; Logo Design
+            Web Dev &middot; Competitive Programming &middot; Full Stack &middot; Cloud
           </motion.p>
           <motion.div
             className="flex flex-wrap gap-4 pt-4"

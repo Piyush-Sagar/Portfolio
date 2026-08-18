@@ -26,7 +26,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto max-w-7xl px-6 py-16 md:py-24 border-t border-neutral-200 dark:border-neutral-800"
+      className="mx-auto max-w-7xl px-6 py-16 md:py-16 border-t border-neutral-200 dark:border-neutral-800"
     >
       <motion.div
         className="flex-1 pt-2 md:pt-0"
@@ -35,23 +35,7 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >
-        {/* Education & Skills tagline */}
-          <motion.p
-            className="mt-4 text-sm text-neutral-500 dark:text-neutral-400"
-            variants={cardVariants}
-            style={{ transitionDelay: "200ms" }}
-          >
-            B.Tech Information Technology · VIT Vellore
-          </motion.p>
-          <motion.p
-            className="mt-1 text-sm text-neutral-500 dark:text-neutral-400"
-            variants={cardVariants}
-            style={{ transitionDelay: "250ms" }}
-          >
-            Competitive Programming · Python · Japanese · Photo/Video Editing · Logo Design
-          </motion.p>
-
-          <motion.h2
+        <motion.h2
             className="mt-6 text-2xl md:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100"
             variants={cardVariants}
           >
@@ -96,9 +80,9 @@ export default function About() {
                 B.Tech IT, VIT Vellore (2024–2028)
               </p>
               <div className="mt-3 relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold shadow-lg shadow-blue-500/30">
+                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
                   CGPA: 9.43
-                </span>
+                </p>
               </div>
             </motion.div>
             <motion.div
