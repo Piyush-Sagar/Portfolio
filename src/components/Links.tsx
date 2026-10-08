@@ -11,7 +11,7 @@ const projects = [
       "Frontend interface for a production-oriented API platform providing infrastructure services: DNS intelligence, UPI utilities, and developer tools. Built documentation pages, API reference sections, and dashboard interfaces. Implemented structured API documentation covering authentication, pagination, and rate limits.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     links: {
-      demo: "https://apitools.chirayusahu.com/",
+      demo: "https://apitools.piyush.tech/",
     } as { github?: string; demo?: string },
   },
   {
