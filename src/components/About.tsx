@@ -1,114 +1,99 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-const easing = [0.25, 0.46, 0.45, 0.94] as const;
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: easing,
-    },
-  },
-};
-
-const infoCardVariants = {
-  initial: { opacity: 0, scale: 0.95, y: 10 },
-  animate: { opacity: 1, scale: 1, y: 0 },
-  hover: { scale: 1.02, y: -4, transition: { duration: 0.3, ease: easing } },
-};
+import {
+  ArrowUpRightIcon,
+  CodeIcon,
+  CompassIcon,
+  GraduationCapIcon,
+} from "@phosphor-icons/react/ssr";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto max-w-7xl px-6 py-16 md:py-16 border-t border-neutral-200 dark:border-neutral-800"
+      className="section container about-section"
+      aria-labelledby="about-title"
     >
-      <motion.div
-        className="flex-1 pt-2 md:pt-0"
-        variants={cardVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        <motion.h2
-            className="mt-6 text-2xl md:text-3xl font-light tracking-tight text-neutral-900 dark:text-neutral-100"
-            variants={cardVariants}
+      <div className="section-label">
+        <span>02 / THE PERSON BEHIND THE CODE</span>
+        <span className="label-line" />
+      </div>
+      <div className="about-grid">
+        <div className="about-heading">
+          <h2 id="about-title">
+            A curious mind.
+            <br />A builder at heart<span className="accent-text">.</span>
+          </h2>
+          <p className="section-subtitle">
+            Good software starts with asking better questions.
+          </p>
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
           >
-            About
-          </motion.h2>
-          <motion.div
-            className="mt-8 prose prose-neutral dark:prose-invert max-w-none"
-            variants={cardVariants}
-          >
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Engineering undergraduate specializing in Information Technology with a strong academic record
-              and solid grounding in software development fundamentals. Proficient in C++ and actively practicing
-              data structures and algorithms through LeetCode and competitive programming.
+            More in my résumé <ArrowUpRightIcon size={17} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="about-copy">
+          <p>
+            I’m Piyush, an Information Technology undergraduate at{" "}
+            <strong>VIT Vellore</strong>. I enjoy the space where solid
+            engineering meets thoughtful design — building software that feels
+            as good to use as it is to work on.
+          </p>
+          <p>
+            My foundation is in C++, data structures, and algorithms. These
+            days, I’m bringing that problem-solving mindset to full-stack
+            development with JavaScript, TypeScript, and the MERN stack.
+          </p>
+          <p>
+            I’m also exploring <strong>Go and backend architecture</strong>,
+            learning how to make systems simpler, faster, and ready to grow. I’m
+            looking for opportunities to learn alongside people who care about
+            their craft.
+          </p>
+        </div>
+      </div>
+      <div className="about-notes">
+        <article>
+          <span className="note-icon">
+            <GraduationCapIcon size={24} aria-hidden="true" />
+          </span>
+          <div>
+            <h3>Learning with intention</h3>
+            <p>
+              B.Tech IT at VIT Vellore.
+              <br />A foundation in theory, a focus on practice.
             </p>
-            <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Skilled in JavaScript, TypeScript, and modern web technologies with experience using Git-based
-              workflows and relational databases. Interested in backend systems, web application architecture,
-              and scalable software design.
+          </div>
+        </article>
+        <article>
+          <span className="note-icon">
+            <CodeIcon size={24} aria-hidden="true" />
+          </span>
+          <div>
+            <h3>Thinking in solutions</h3>
+            <p>
+              Regular LeetCode practice.
+              <br />
+              One interesting problem at a time.
             </p>
-            <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Currently diving into Go (Golang) and MERN Stack to expand full-stack and backend development
-              skills. Seeking internship or entry-level opportunities to apply technical knowledge, strengthen
-              problem-solving ability, and contribute to well-engineered software systems.
+          </div>
+        </article>
+        <article>
+          <span className="note-icon">
+            <CompassIcon size={24} aria-hidden="true" />
+          </span>
+          <div>
+            <h3>Following my curiosity</h3>
+            <p>
+              From new languages to better systems.
+              <br />
+              There’s always something to explore.
             </p>
-          </motion.div>
-          <motion.div
-            className="mt-10 grid gap-4 sm:grid-cols-3"
-            variants={cardVariants}
-          >
-            <motion.div
-              className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 relative overflow-hidden"
-              variants={infoCardVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              style={{ transitionDelay: "300ms" }}
-            >
-              {/* CGPA Highlight */}
-              <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-blue-500/10 via-transparent to-blue-500/10 pointer-events-none" />
-              <p className="font-medium text-neutral-900 dark:text-neutral-100 relative z-10">Education</p>
-              <p className="mt-1 text-neutral-600 dark:text-neutral-400 relative z-10">
-                B.Tech IT, VIT Vellore (2024–2028)
-              </p>
-              <div className="mt-3 relative z-10">
-                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                  CGPA: 9.43
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
-              variants={infoCardVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              style={{ transitionDelay: "380ms" }}
-            >
-              <p className="font-medium text-neutral-900 dark:text-neutral-100">Location</p>
-              <p className="mt-1 text-neutral-600 dark:text-neutral-400">Vellore, Tamil Nadu</p>
-            </motion.div>
-            <motion.div
-              className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
-              variants={infoCardVariants}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              style={{ transitionDelay: "460ms" }}
-            >
-              <p className="font-medium text-neutral-900 dark:text-neutral-100">Availability</p>
-              <p className="mt-1 text-neutral-600 dark:text-neutral-400">Open to internships & full-time</p>
-            </motion.div>
-          </motion.div>
-      </motion.div>
+          </div>
+        </article>
+      </div>
     </section>
   );
 }

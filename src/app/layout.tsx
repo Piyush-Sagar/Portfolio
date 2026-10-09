@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
-import LenisProvider from "@/components/LenisProvider";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -18,10 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://piyush-sagar.dev"),
   title: "Piyush Sagar — Portfolio",
-  description: "B.Tech IT @ VIT Vellore | Competitive Programming, Python, Japanese, Design",
+  description:
+    "Piyush Sagar — IT student at VIT Vellore, full-stack developer, and problem solver. Explore my projects, toolkit, and academic journey.",
   openGraph: {
     title: "Piyush Sagar — Portfolio",
-    description: "B.Tech IT @ VIT Vellore | Competitive Programming, Python, Japanese, Design",
+    description:
+      "Full-stack development, thoughtful interfaces, and interesting problems. Explore the work of Piyush Sagar.",
     type: "website",
     images: [
       {
@@ -35,7 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Piyush Sagar — Portfolio",
-    description: "B.Tech IT @ VIT Vellore | Competitive Programming, Python, Japanese, Design",
+    description:
+      "Full-stack development, thoughtful interfaces, and interesting problems. Explore the work of Piyush Sagar.",
     images: ["/og.svg"],
   },
   robots: {
@@ -59,9 +61,7 @@ export default function RootLayout({
       className={`${jakartaSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <LenisProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </LenisProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

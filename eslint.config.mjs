@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Bundled agent skills are external tooling, not application source.
+    ".agents/**",
+    ".claude/**",
   ]),
 ]);
 
