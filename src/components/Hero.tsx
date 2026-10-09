@@ -35,7 +35,7 @@ export default function Hero() {
             />
           </h1>
           <p className="hero-description">
-            A B.Tech Information Technology student at VIT Vellore. I build
+            B.Tech Information Technology student at VIT Vellore. I build
             full-stack web applications and sharpen my problem-solving skills
             through competitive programming.
           </p>
