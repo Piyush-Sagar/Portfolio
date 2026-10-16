@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
-const RESUME_PATH = path.join(process.cwd(), 'public', 'Piyush Sagar Resume.pdf');
+const RESUME_PATH = path.join(process.cwd(), 'public', 'resume.pdf');
 
 export async function GET() {
   try {
